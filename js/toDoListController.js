@@ -2,8 +2,11 @@ app.controller('toDoListController', [function() {
 
   var self = this;
 
-  self.toDo =  {
-    "items": ['Improve touch typing', 'Do yoga', 'Learn Angular']
-  }
+  self.allTasks = [];
+
+  self.addTask = function() {
+    self.allTasks.push(self.taskDetail);
+    self.taskDetail = ""
+  };
 
   }]);

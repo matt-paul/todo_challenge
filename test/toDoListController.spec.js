@@ -7,20 +7,17 @@ describe('toDoListController', function() {
   ctrl = $controller('toDoListController');
   }));
 
-  it('initialises with an empty add task box', function() {
-    expect(ctrl.addTask).toBeUndefined();
-  });
-
   it('initialises with an empty to do list', function() {
-    expect(ctrl.toDo).toBeUndefined();
+    expect(ctrl.allTasks.length).toBe(0);
   });
 
-  describe('when adding items', function() {
-
-    var items = ['Improve touch typing', 'Do yoga', 'Learn Angular'];
+  describe('when adding tasks', function() {
+    var items = ['Yoga']
 
     it('diplays listed items', function() {
-      expect(ctrl.toDo.items).toEqual(items);
+      ctrl.taskDetail = 'Yoga';
+      ctrl.addTask();
+      expect(ctrl.allTasks).toEqual(items);
     });
   });
 });
