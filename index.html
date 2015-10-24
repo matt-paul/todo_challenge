@@ -3,7 +3,7 @@
 
   <head>
     <meta charset="utf-8">
-    <title>To Do Challemge</title>
+    <title>To Do Challenge</title>
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css">
     <script src = "bower_components/angular/angular.js"></script>
     <script src = "bower_components/jquery/dist/jquery.js"></script>
@@ -23,7 +23,7 @@
 
       <ul class="list-group">
         <li ng-repeat="task in tdlCtrl.allTasks">
-          <input type="checkbox" ng-model="list.tasks"
+          <input type="checkbox" checklist-model="list.tasks"
           <p>{{task}}</p>
         </li>
       </ul>

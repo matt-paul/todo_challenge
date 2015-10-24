@@ -7,6 +7,7 @@ app.controller('toDoListController', [function() {
   self.addTask = function() {
     self.allTasks.push(self.taskDetail);
     self.taskDetail = ""
+    console.log(self.allTasks)
   };
 
   }]);

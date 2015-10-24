@@ -14,10 +14,11 @@ describe('toDoListController', function() {
   describe('when adding tasks', function() {
     var items = ['Yoga']
 
-    it('diplays listed items', function() {
+    it('adds items to the main task array', function() {
       ctrl.taskDetail = 'Yoga';
       ctrl.addTask();
       expect(ctrl.allTasks).toEqual(items);
     });
+
   });
 });
