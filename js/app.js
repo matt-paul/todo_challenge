@@ -1,1 +1,1 @@
-var app = angular.module('todo_challenge', [])
+var app = angular.module('toDoList', []);
