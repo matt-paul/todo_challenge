@@ -23,8 +23,9 @@
 
       <ul class="list-group">
         <li ng-repeat="task in tdlCtrl.allTasks">
-          <input type="checkbox" checklist-model="bananas">
-          <p>{{task.description}}</p>
+          <input type="checkbox" ng-model="task.completed"
+          ng-change="tdlCtrl.toggleComplete(task.completed)">
+          <p>{{task.description}} {{task.completed}}</p>
         </li>
       </ul>
 

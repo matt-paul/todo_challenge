@@ -26,5 +26,6 @@
   },
   "dependencies": {
     "http-server": "^0.8.5"
+    "bower": "^1.6.3"
   }
 }
