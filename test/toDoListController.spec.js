@@ -13,9 +13,10 @@ describe('toDoListController', function() {
 
   describe('when adding tasks', function() {
     var testItems = [
-      { task: 'Yoga',
-      completed: false }
-      ]
+      { description: 'Yoga',
+      completed: false
+      }
+    ]
 
     it('adds items to the main task array', function() {
       ctrl.taskDetail = 'Yoga';
@@ -24,21 +25,20 @@ describe('toDoListController', function() {
       expect(ctrl.allTasks.length).toEqual(1);
     });
 
-   it('is marked as needing completion when created', function() {
+    it('is marked as needing completion when created', function() {
       ctrl.taskDetail = 'Yoga';
       ctrl.addTask();
       expect(ctrl.allTasks[0].completed).toBe(false);
     });
   });
 
-//  describe('when completing tasks', function() {
-
-//    it('property changes to being completed when task done', function() {
-//      ctrl.taskDetail = 'Yoga';
- //     ctrl.addTask;
-  //    expect(ctrl.allTasks[0]["completed"] === false);
-//      ctrl.completeTask('Yoga');
-//      expect(ctrl.allTasks[0]).toEqual("True");
-//    });
-//  });
+  describe('when completing tasks', function() {
+    it('property changes to being completed when task done', function() {
+      ctrl.taskDetail = 'Yoga';
+      ctrl.addTask();
+      expect(ctrl.allTasks[0].completed).toBe(false);
+      ctrl.toggleComplete(ctrl.allTasks[0]);
+      expect(ctrl.allTasks[0].completed).toBe(true);
+    });
+  });
 });
