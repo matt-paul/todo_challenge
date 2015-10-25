@@ -18,25 +18,26 @@ describe('toDoListController', function() {
       }
     ]
 
-    it('adds items to the main task array', function() {
+    beforeEach(function() {
       ctrl.taskDetail = 'Yoga';
       ctrl.addTask();
+    });
+
+    it('adds items to the main task array', function() {
       expect(ctrl.allTasks).toEqual(testItems);
       expect(ctrl.allTasks.length).toEqual(1);
     });
 
     it('is marked as needing completion when created', function() {
-      ctrl.taskDetail = 'Yoga';
-      ctrl.addTask();
       expect(ctrl.allTasks[0].completed).toBe(false);
     });
+
   });
 
   describe('when completing tasks', function() {
     it('property changes to being completed when task done', function() {
-      ctrl.taskDetail = 'Yoga';
+      ctrl.taskDetail = 'Swim';
       ctrl.addTask();
-      expect(ctrl.allTasks[0].completed).toBe(false);
       ctrl.toggleComplete(ctrl.allTasks[0]);
       expect(ctrl.allTasks[0].completed).toBe(true);
     });
